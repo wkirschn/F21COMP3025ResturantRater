@@ -20,7 +20,7 @@ class RecyclerListActivity : AppCompatActivity() {
         viewModel.getRestaurants().observe(this, {
             restaurats ->
             var recyclerViewAdapter = RecyclerViewAdapter(this, restaurats)
-            binding.verticalRestaurantRecyclerView.adapter = recyclerViewAdapter
+            binding.verticalGridRestaurantRecyclerView.adapter = recyclerViewAdapter
         })
 
 
