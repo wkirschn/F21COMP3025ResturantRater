@@ -2,11 +2,13 @@
     <string name="app_name">F21COMP3025ResturantRater</string>
     <string name="add_a_resturant">Add a Resturant</string>
     <string name="enter_resturant_name">Enter Resturant Name</string>
+    <string name="add_resturant">Add Resturant</string>
     <string-array name="ratings">
         <item>Choose Rating</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 </resources>

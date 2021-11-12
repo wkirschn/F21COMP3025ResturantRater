@@ -40,13 +40,25 @@
     <Spinner
         android:id="@+id/ratingSpinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_margin="@dimen/standard_margin"
         android:textColor="@color/black"
         android:entries="@array/ratings"
+        android:background="#FFBB86FC"
         android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputResturantName" />
+
+    <Button
+        android:id="@+id/addResturantButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_resturant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingSpinner"
+        android:layout_marginTop="@dimen/standard_margin"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
