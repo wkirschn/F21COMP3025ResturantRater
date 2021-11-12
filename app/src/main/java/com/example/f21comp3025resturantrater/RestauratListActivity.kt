@@ -22,6 +22,9 @@ class RestauratListActivity : AppCompatActivity() {
         val viewModel: RestaurantListViewModel by viewModels()
 
         viewModel.getRestaurants().observe(this, { restaurants ->
+
+            binding.layoutGridFetch.removeAllViews()
+
             for (restaurant in restaurants) {
 
                 //Add restaurant to the LinearList
