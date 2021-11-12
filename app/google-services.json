@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "716980099254",
+    "project_id": "f21comp3025resturantrater",
+    "storage_bucket": "f21comp3025resturantrater.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716980099254:android:31cf3af767e3497274ae17",
+        "android_client_info": {
+          "package_name": "com.example.f21comp3025resturantrater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716980099254-gou5sj5t5blkqercslkipsdire54q5h6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8Pis5p2Nn_aqHd5rt57GdRIcum4zXRBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716980099254-gou5sj5t5blkqercslkipsdire54q5h6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

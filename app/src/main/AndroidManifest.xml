@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.F21COMP3025ResturantRater">
         <activity
+            android:name=".RestauratListActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
