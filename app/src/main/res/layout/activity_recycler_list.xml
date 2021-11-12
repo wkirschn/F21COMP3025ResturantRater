@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecyclerListActivity">
+
+    <TextView
+        android:id="@+id/recycleViewResturantList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_of_resturants"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/default_font_size"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verticalRestaurantRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/standard_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/recycleViewResturantList" />
+</androidx.constraintlayout.widget.ConstraintLayout>
