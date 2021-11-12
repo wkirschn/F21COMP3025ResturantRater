@@ -4,6 +4,9 @@
     <string name="enter_resturant_name">Enter Resturant Name</string>
     <string name="add_resturant">Add Resturant</string>
     <string name="list_of_resturants">List of Resturants</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_comment">Enter Comment</string>
+    <string name="save">save</string>
     <string-array name="ratings">
         <item>Choose Rating</item>
         <item>1</item>
