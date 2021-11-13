@@ -9,7 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class GridAdapter (val context : Context, val restaurants : List<Restaurant>) :RecyclerView.Adapter<GridAdapter.RestaurantViewHolder>() {
+class GridAdapter (val context : Context, val restaurants : List<Restaurant>,
+val itemListener: RestaurantItemListener) :RecyclerView.Adapter<GridAdapter.RestaurantViewHolder>() {
 
     /**
      *  This class is used to allow us to access the item_restaurant.xml objects
@@ -21,6 +22,7 @@ class GridAdapter (val context : Context, val restaurants : List<Restaurant>) :R
 
         val nameTextView = itemView.findViewById<TextView>(R.id.resturantSetterRatingView)
         val ratingBar = itemView.findViewById<RatingBar>(R.id.ratingBarSetterView)
+
 
     }
 
@@ -49,6 +51,10 @@ class GridAdapter (val context : Context, val restaurants : List<Restaurant>) :R
         with (viewHolder) {
             nameTextView.text = restaurant.name
             ratingBar.rating = restaurant.rating!!.toFloat()
+
+            itemView.setOnClickListener {
+                itemListener.restaurantSelected(restaurant)
+            }
         }
 
 
@@ -57,5 +63,12 @@ class GridAdapter (val context : Context, val restaurants : List<Restaurant>) :R
     override fun getItemCount(): Int {
         return restaurants.size
     }
+
+    interface RestaurantItemListener {
+        fun restaurantSelected ( restaurant : Restaurant)
+
+    }
+
+
 
 }
