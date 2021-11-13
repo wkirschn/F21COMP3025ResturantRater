@@ -3,12 +3,16 @@ package com.example.f21comp3025resturantrater
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.example.f21comp3025resturantrater.databinding.ActivityCommentBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CommentActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityCommentBinding
+    private lateinit var viewModel : CommentViewModel
+    private lateinit var viewModelFactory : CommentViewModelFactory
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +20,7 @@ class CommentActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.restaurantNameTextView.text = intent.getStringExtra("restaurantName")
-
+        val restaurantID = intent.getStringExtra("restaurantID")
 
         binding.saveCommentButton.setOnClickListener {
 
@@ -30,7 +34,7 @@ class CommentActivity : AppCompatActivity() {
                 val db = FirebaseFirestore.getInstance().collection("comments")
                 val id = db.document().id
 
-                val restaurantID = intent.getStringExtra("restaurantID")
+
                 restaurantID?.let {
                     val newComment = Comment(id, userName, commentBody, restaurantID )
                     db.document().set(newComment)
@@ -44,6 +48,20 @@ class CommentActivity : AppCompatActivity() {
             }
         }
 
+
+        // This code connects the RecyclerView with the ViewAdapter and List of Comment objects
+        restaurantID?.let {
+
+            viewModelFactory = CommentViewModelFactory(restaurantID)
+            viewModel = ViewModelProvider(this, viewModelFactory).get(CommentViewModel::class.java)
+            viewModel.getComments().observe(this, {
+                comments ->
+
+                var recyclerAdapter = CommentViewAdapter(this, comments)
+                binding.commentsRecyclerView.adapter = recyclerAdapter
+            })
+
+        }
 
 
     }
