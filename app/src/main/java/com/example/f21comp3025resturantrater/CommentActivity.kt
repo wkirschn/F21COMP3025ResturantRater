@@ -33,11 +33,14 @@ class CommentActivity : AppCompatActivity() {
                 val restaurantID = intent.getStringExtra("restaurantID")
                 restaurantID?.let {
                     val newComment = Comment(id, userName, commentBody, restaurantID )
+                    db.document().set(newComment)
+                        .addOnSuccessListener { Toast.makeText(this,"Added to DB", Toast.LENGTH_LONG).show() }
+                        .addOnFailureListener { Toast.makeText(this,"Failed to add comment", Toast.LENGTH_LONG).show()}
                 }
             }
             else
             {
-                Toast.makeText(this,"Both user ame and comment are required", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Both user name and comment are required", Toast.LENGTH_LONG).show()
             }
         }
 
