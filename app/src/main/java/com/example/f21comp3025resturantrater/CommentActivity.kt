@@ -1,5 +1,6 @@
 package com.example.f21comp3025resturantrater
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -60,6 +61,16 @@ class CommentActivity : AppCompatActivity() {
                 var recyclerAdapter = CommentViewAdapter(this, comments)
                 binding.commentsRecyclerView.adapter = recyclerAdapter
             })
+
+        }
+
+        binding.backFAB.setOnClickListener {
+
+            startActivity(Intent(this, GridRecyclerViewActivity::class.java))
+
+
+
+
 
         }
 

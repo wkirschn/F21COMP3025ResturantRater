@@ -22,8 +22,14 @@ class GridRecyclerViewActivity : AppCompatActivity(), GridAdapter.RestaurantItem
         viewModel.getRestaurants().observe(this, {restaurants ->
             var gridAdapter = GridAdapter(this, restaurants, this)
             binding.verticalGridRestaurantRecyclerView.adapter = gridAdapter
+
+
+
         })
 
+        binding.addResturantFAB.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
 
     }

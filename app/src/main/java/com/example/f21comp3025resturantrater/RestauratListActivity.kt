@@ -1,5 +1,6 @@
 package com.example.f21comp3025resturantrater
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -65,5 +66,8 @@ class RestauratListActivity : AppCompatActivity() {
 
                 binding.layoutGridFetch.addView(textView)
             }*/
+
+
+
     }
 }

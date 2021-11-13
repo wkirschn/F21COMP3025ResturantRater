@@ -58,5 +58,15 @@ dependencies {
 
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+
+    //Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+
+    // Declare the dependency for the Firebase Authentication
+    // When using the BoM, you don't specify versions in Firebase Library Dependencies
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+
 
 }

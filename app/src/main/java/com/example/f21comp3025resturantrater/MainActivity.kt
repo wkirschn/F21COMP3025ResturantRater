@@ -1,5 +1,6 @@
 package com.example.f21comp3025resturantrater
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -42,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                         .show()
                     binding.inputResturantName.setText("")
                     binding.ratingSpinner.setSelection(0)
+                    startActivity(Intent(this, GridRecyclerViewActivity::class.java))
+
                 }
                     .addOnFailureListener {
                         Toast.makeText(this, "Failure to add. DB Error!", Toast.LENGTH_LONG)
